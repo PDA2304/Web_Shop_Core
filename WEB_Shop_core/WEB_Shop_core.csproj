@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Content\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Assets\1_det-platinum2.jpg" />
+    <None Include="wwwroot\Assets\1_det6.gif" />
+    <None Include="wwwroot\Assets\1_elite3.jpg" />
+    <None Include="wwwroot\Assets\1_gost-elite-mebit2.jpg" />
+    <None Include="wwwroot\Assets\1_volare1b.jpg" />
+    <None Include="wwwroot\Assets\arezia_b.jpg" />
+    <None Include="wwwroot\Assets\bank.png" />
+    <None Include="wwwroot\Assets\camel-maia-sabbia-bg.jpg" />
+    <None Include="wwwroot\Assets\camel-round-bg.jpg" />
+    <None Include="wwwroot\Assets\camel-round-sabbia-bg.jpg" />
+    <None Include="wwwroot\Assets\camelgroup1.png" />
+    <None Include="wwwroot\Assets\camel_nost_bianco1b.jpg" />
+    <None Include="wwwroot\Assets\cantiero-logo.png" />
+    <None Include="wwwroot\Assets\card_home.png" />
+    <None Include="wwwroot\Assets\card_online.png" />
+    <None Include="wwwroot\Assets\cash.png" />
+    <None Include="wwwroot\Assets\det_vendome_pregno.jpg" />
+    <None Include="wwwroot\Assets\dog1.png" />
+    <None Include="wwwroot\Assets\elite_sabbia0b.jpg" />
+    <None Include="wwwroot\Assets\giotto-day2.jpg" />
+    <None Include="wwwroot\Assets\logo_frigerio.png" />
+    <None Include="wwwroot\Assets\logo_new_carp.png" />
+    <None Include="wwwroot\Assets\male.png" />
+    <None Include="wwwroot\Assets\mobilturi-brio-bg.jpg" />
+    <None Include="wwwroot\Assets\mobilturi-camilla-bg.jpg" />
+    <None Include="wwwroot\Assets\mobilturi-gaia-bg.jpg" />
+    <None Include="wwwroot\Assets\mobilturi-matrix-bg.jpg" />
+    <None Include="wwwroot\Assets\mobilturi-nala-bg.jpg" />
+    <None Include="wwwroot\Assets\mobilturi-newego-bg.jpg" />
+    <None Include="wwwroot\Assets\nostdet.jpg" />
+    <None Include="wwwroot\Assets\pregno-logo.png" />
+    <None Include="wwwroot\Assets\shopping.png" />
+    <None Include="wwwroot\Assets\sp-maia2.jpg" />
+    <None Include="wwwroot\Assets\stella_del_mobile_logo.png" />
+    <None Include="wwwroot\Assets\teddi1.jpg" />
+    <None Include="wwwroot\Assets\tosconova_logo_400.png" />
+    <None Include="wwwroot\Assets\trevi1.gif" />
+    <None Include="wwwroot\Assets\treviso-grigio-bg.jpg" />
+    <None Include="wwwroot\Assets\treviso_night10b.jpg" />
+    <None Include="wwwroot\Assets\turri_logo.png" />
+    <None Include="wwwroot\Assets\vitrina.jpg" />
+    <None Include="wwwroot\Assets\Аннотация 2020-09-14 095617.png" />
+    <None Include="wwwroot\Assets\bg1_old.png" />
+    <None Include="wwwroot\css\Css.css" />
+  </ItemGroup>
+
+</Project>

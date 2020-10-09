@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Детская мебель";
+}
+
+@{ string[] name_bedroom = { "Детская комната PLATINUM", "Детская Ностальджия белый антик", "Детская комната Ностальджия", "Детская мебель AREZIA", "Детская мебель TEDDY", "Детская мебель Arcadia" };
+    string[] path_bedroom = { "1_det-platinum2.jpg", "1_det6.gif", "nostdet.jpg", "det_vendome_pregno.jpg", "arezia_b.jpg", "teddi1.jpg" };
+
+    <div style="text-align:center">
+        @{ for (int i = 0; i < path_bedroom.Length; i++)
+            {
+                <article style="text-align:center; display:inline-flex; justify-content:space-around; margin:5px; background: #5e5d5b;">
+                    <section>
+                        <a href="@Url.Action("Product_card")">
+                            <img style="width:300px; padding:10px; margin: 0; " src="~/Assets/@path_bedroom[i]" /><br />
+                            <p style="color:white">
+                                @name_bedroom[i]
+                            </p>
+                        </a>
+                    </section>
+                </article>
+            }
+        }
+    </div>
+
+}

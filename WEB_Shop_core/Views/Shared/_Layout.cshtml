@@ -1,0 +1,80 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+
+    <title>@ViewBag.Title</title>
+    <link type="text/css" href="~/css/Css.css" rel="stylesheet" />
+</head>
+<body style="margin-top: 0;background-image: url(~/wwwroot/Assets/bg1_old.png) fixed">
+    <div style="width: 74%; margin-top: 0px; margin-bottom:0; background: grey; position:fixed; left:13%; top: 0;">
+        <div style="width: 100%;border-bottom: 3px solid rgb(128, 127, 123);background: #5e5d5b;">
+            <table style="width:90%; margin:auto; color: white;">
+                <tr>
+                    <td>
+                        м. Калужская<br />
+                        ул. Профсоюзная, д. 57
+                    </td>
+                    <td>
+                        +7 (495) 798-96-74<br />
+                        +7 (495) 798-92-74
+                    </td>
+                    <td>
+                        Пн-Сб: 11:00 - 20:00<br />
+                        Вс: 11:00 - 18:00
+                    </td>
+                    <td>
+                        info@mebit.ru
+                    </td>
+                    <td>
+                        @Html.ActionLink("Контакты", "Kontakt", null, new { id = 1 }, new { @style = "color:#FFF;  text-decoration: none;" })
+                    </td>
+                    <td>
+                        <img src="~/Assets/shopping.png" style="width: 15px;margin: 0px; margin-bottom: 5px; margin-right:5px" />@Html.ActionLink("Корзина", "Cart", null, new { id = 1 }, new { @style = "color:#FFF;  text-decoration: none;" })
+                    </td>
+
+                    <td>
+                        <a href="@Url.Action("User")">  <img src="~/Assets/male.png" style="width:30px;" /></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="width: 100%; margin:0;
+        border-bottom: 3px solid rgb(128, 127, 123);
+        background: #5e5d5b;"><h1 style="margin: 0px; font-size:70px;text-align:center">@Html.ActionLink("МЕБЕЛЬ ИТАЛИИ", "Index", null, new { id = 1 }, new { @style = "color: #f00; text-decoration: none;" })</h1></div>
+        <div style="margin: 0px;
+        background: #5e5d5b;border-bottom: 3px solid rgb(128, 127, 123);">
+            <table width="75%" border="0" cellspacing="10" cellpadding="0" color="#5e5d5b" style="margin: auto;">
+                <tbody>
+                    <tr align="center">
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            <div style="text-indent: 0px;"><a href="@Url.Action("Bedroom")" style="text-decoration: none;"><font color="#FFFFFF" size="2">СПАЛЬНИ</font></a></div>
+                        </td>
+
+                        <td>
+                            <div style="text-indent: 0px;"><a href="@Url.Action("Children_Bedroom")" style="text-decoration: none;"><font color="#FFFFFF" size="2">ДЕТСКАЯ МЕБЕЛЬ</font></a></div>
+                        </td>
+                        <td>
+                            <div style="text-indent: 0px;"><a href="@Url.Action("Kitchen")" style="text-decoration: none;"><font color="#FFFFFF" size="2">КУХНИ</font></a></div>
+                        </td>
+
+
+                        <td>
+                            <div style="text-indent: 0px;"><a href="@Url.Action("Living_Room")" style="text-decoration: none;"><font color="#FFFFFF" size="2">ГОСТИНЫЕ</font></a></div>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="height: 100%;margin-left: 13%;margin-right: 13%;margin-top: 170px;margin-bottom:0;background: grey;">
+        @RenderBody()
+    </div>
+</body>
+</html>
