@@ -1,0 +1,24 @@
+﻿@{ 
+    Layout = "_Layout";
+}
+
+@RenderBody()
+<div style="text-align:center">
+    @{ foreach (var mebel in Model)
+        {
+            if (mebel.Category.categoryname == ViewBag.Title)
+            {
+                <article style="text-align:center; display:inline-flex; justify-content:space-around; margin:5px; background: #5e5d5b;">
+                    <section>
+                        <a href="#">
+                            <img style="width:300px; padding:10px; margin: 0; " src="~/Assets/@mebel.img" /><br />
+                            <p style="color:white">
+                                @mebel.name
+                            </p>
+                        </a>
+                    </section>
+                </article>
+            }
+        }
+    }
+</div>

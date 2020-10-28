@@ -8,12 +8,17 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WEB_Shop_core.Data;
+
+
+using Microsoft.EntityFrameworkCore;
 
 namespace WEB_Shop_core
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        
+        public Startup(IConfiguration configuration, Microsoft.AspNetCore.Hosting.IHostingEnvironment hosting)
         {
             Configuration = configuration;
         }
@@ -23,6 +28,14 @@ namespace WEB_Shop_core
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //string connection = Configuration.GetConnectionString("DefaultConnection");
+            //// добавляем контекст AppDBContext в качестве сервиса в приложение
+            //services.AddDbContext<AppDBContent>(options => options.UseSqlServer(connection));
+            string connection = "Server=DESKTOP-1CRVPTK\\ISIP_D_A_PAHOMOV;Database=Test;Trusted_Connection=True;";
+
+            services.AddDbContext<AppDBContent>(op => op.UseSqlServer(connection));
+
+            services.AddMvc();
             services.AddControllersWithViews();
         }
 

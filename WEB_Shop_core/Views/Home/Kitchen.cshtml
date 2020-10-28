@@ -1,27 +1,4 @@
 ﻿
 @{
-    ViewBag.Title = "Кухня";
-}
-
-@{ string[] name_bedroom = { "Мебель для кухни BRIO", "Мебель для кухни CAMILLA", "Мебель для кухни GAIA", "Мебель для кухни NALA", "Мебель для кухни MATRIX", "Мебель для кухни NEW EGO" };
-    string[] path_bedroom = { "mobilturi-brio-bg.jpg", "mobilturi-camilla-bg.jpg", "mobilturi-gaia-bg.jpg", "mobilturi-nala-bg.jpg", "mobilturi-matrix-bg.jpg", "mobilturi-newego-bg.jpg" };
-
-    <div style="text-align:center">
-        @{ for (int i = 0; i < path_bedroom.Length; i++)
-            {
-                <article style="text-align:center; display:inline-flex; justify-content:space-around; margin:5px; background: #5e5d5b;">
-                    <section>
-                        <a href="@Url.Action("Product_card")">
-                            <img style="width:300px; padding:10px; margin: 0; " src="~/Assets/@path_bedroom[i]" /><br />
-                            <p style="color:white">
-                                @name_bedroom[i]
-                            </p>
-                        </a>
-                    </section>
-                </article>
-            }
-        }
-    </div>
-
-
+    Layout = "_Layout1";
 }

@@ -46,13 +46,19 @@
     <None Include="wwwroot\Assets\teddi1.jpg" />
     <None Include="wwwroot\Assets\tosconova_logo_400.png" />
     <None Include="wwwroot\Assets\trevi1.gif" />
-    <None Include="wwwroot\Assets\treviso-grigio-bg.jpg" />
     <None Include="wwwroot\Assets\treviso_night10b.jpg" />
     <None Include="wwwroot\Assets\turri_logo.png" />
     <None Include="wwwroot\Assets\vitrina.jpg" />
     <None Include="wwwroot\Assets\Аннотация 2020-09-14 095617.png" />
     <None Include="wwwroot\Assets\bg1_old.png" />
     <None Include="wwwroot\css\Css.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="JSON" Version="1.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
   </ItemGroup>
 
 </Project>

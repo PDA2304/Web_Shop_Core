@@ -43,34 +43,37 @@
         </div>
         <div style="width: 100%; margin:0;
         border-bottom: 3px solid rgb(128, 127, 123);
-        background: #5e5d5b;"><h1 style="margin: 0px; font-size:70px;text-align:center">@Html.ActionLink("МЕБЕЛЬ ИТАЛИИ", "Index", null, new { id = 1 }, new { @style = "color: #f00; text-decoration: none;" })</h1></div>
+        background: #5e5d5b;"><h1 style="margin: 0px; font-size:70px;text-align:center"><a href="@Url.Action("Index")" style="color: #f00; text-decoration: none;">МЕБЕЛЬ ИТАЛИИ</a></h1></div>
         <div style="margin: 0px;
         background: #5e5d5b;border-bottom: 3px solid rgb(128, 127, 123);">
-            <table width="75%" border="0" cellspacing="10" cellpadding="0" color="#5e5d5b" style="margin: auto;">
-                <tbody>
-                    <tr align="center">
-                        <td>
-                            &nbsp;
-                        </td>
-                        <td>
-                            <div style="text-indent: 0px;"><a href="@Url.Action("Bedroom")" style="text-decoration: none;"><font color="#FFFFFF" size="2">СПАЛЬНИ</font></a></div>
-                        </td>
+            <form method="post">
 
-                        <td>
-                            <div style="text-indent: 0px;"><a href="@Url.Action("Children_Bedroom")" style="text-decoration: none;"><font color="#FFFFFF" size="2">ДЕТСКАЯ МЕБЕЛЬ</font></a></div>
-                        </td>
-                        <td>
-                            <div style="text-indent: 0px;"><a href="@Url.Action("Kitchen")" style="text-decoration: none;"><font color="#FFFFFF" size="2">КУХНИ</font></a></div>
-                        </td>
+                <table width="75%" border="0" cellspacing="10" cellpadding="0" color="#5e5d5b" style="margin: auto;">
+                    <tbody>
+                        <tr align="center">
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <div style="text-indent: 0px;"><a href="@Url.Action("Bedroom")" style="text-decoration: none;"><font color="#FFFFFF" size="2">СПАЛЬНИ</font></a></div>
+                            </td>
+
+                            <td>
+                                <div style="text-indent: 0px;"><a href="@Url.Action("Children_Bedroom")" style="text-decoration: none;"><font color="#FFFFFF" size="2">ДЕТСКАЯ МЕБЕЛЬ</font></a></div>
+                            </td>
+                            <td>
+                                <div style="text-indent: 0px;"><a href="@Url.Action("Kitchen")" style="text-decoration: none;"><font color="#FFFFFF" size="2">КУХНИ</font></a></div>
+                            </td>
 
 
-                        <td>
-                            <div style="text-indent: 0px;"><a href="@Url.Action("Living_Room")" style="text-decoration: none;"><font color="#FFFFFF" size="2">ГОСТИНЫЕ</font></a></div>
-                        </td>
+                            <td>
+                                <div style="text-indent: 0px;"><a href="@Url.Action("Living_Room")" style="text-decoration: none;"><font color="#FFFFFF" size="2">ГОСТИНЫЕ</font></a></div>
+                            </td>
 
-                    </tr>
-                </tbody>
-            </table>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
         </div>
     </div>
     <div style="height: 100%;margin-left: 13%;margin-right: 13%;margin-top: 170px;margin-bottom:0;background: grey;">

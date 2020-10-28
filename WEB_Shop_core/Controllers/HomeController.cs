@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-
+using WEB_Shop_core.Data;
+using WEB_Shop_core.Data.Models;
 namespace WEB_Shop_core.Controllers
 {
     public class HomeController : Controller
@@ -17,16 +20,18 @@ namespace WEB_Shop_core.Controllers
         //    _logger = logger;
         //}
 
+     
+        private AppDBContent db;
+
+        public HomeController(AppDBContent content)
+        {
+            db = content;
+        }
+
         public IActionResult Index()
         {
             return View();
         }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         public ActionResult Kontakt()
         {
             return View();
@@ -35,25 +40,29 @@ namespace WEB_Shop_core.Controllers
         {
             return View();
         }
-        public ActionResult User()
+        public async Task<ActionResult> Bedroom()
         {
-            return View();
+            IQueryable<Mebel> mebels = db.Mebels.Include(x => x.Category);
+            ViewBag.Title = "Спальни";
+            return View(await mebels.AsNoTracking().ToListAsync());
         }
-        public ActionResult Bedroom()
+        public async Task<ActionResult> Children_Bedroom()
         {
-            return View();
+            IQueryable<Mebel> mebels = db.Mebels.Include(x => x.Category);
+            ViewBag.Title = "Детская мебель";
+            return View(await mebels.AsNoTracking().ToListAsync());
         }
-        public ActionResult Children_Bedroom()
+        public async Task<ActionResult> Kitchen()
         {
-            return View();
+            IQueryable<Mebel> mebels = db.Mebels.Include(x => x.Category);
+            ViewBag.Title = "Кухни";
+            return View(await mebels.AsNoTracking().ToListAsync());
         }
-        public ActionResult Kitchen()
+        public async Task<ActionResult> Living_Room()
         {
-            return View();
-        }
-        public ActionResult Living_Room()
-        {
-            return View();
+            IQueryable<Mebel> mebels = db.Mebels.Include(x => x.Category);
+            ViewBag.Title = "Гостинные";
+            return View(await mebels.AsNoTracking().ToListAsync());
         }
 
         public ActionResult Product_card()
@@ -65,8 +74,5 @@ namespace WEB_Shop_core.Controllers
         {
             return View();
         }
-
-
-    
     }
 }
