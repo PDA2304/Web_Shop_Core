@@ -17,7 +17,7 @@ namespace WEB_Shop_core
 {
     public class Startup
     {
-        
+
         public Startup(IConfiguration configuration, Microsoft.AspNetCore.Hosting.IHostingEnvironment hosting)
         {
             Configuration = configuration;
@@ -59,12 +59,19 @@ namespace WEB_Shop_core
 
             app.UseStaticFiles();
 
-           
+
 
             app.UseAuthorization();
 
+
+
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                   name: "Product_card",
+                   pattern: "Product_card",
+                   defaults: new { controller = "Home", action = "Product_card" });
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

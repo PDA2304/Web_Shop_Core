@@ -1,19 +1,15 @@
-﻿
-@{
-
-    ViewBag.Title = "Товар";
-}
+﻿@model WEB_Shop_core.Data.Models.Mebel
 <table>
     <tr>
         <td>
-            <img src="~/Assets/camel-round-bg.jpg" style=" width:500px; margin:10px;" />
+            <img src="~/Assets/@Model.img" style=" width:500px; margin:10px;" />
         </td>
         <td>
             <table style="color:white">
                 <tr>
                     <td>
                         <h1>
-                            Спальня ROUND серебристая береза
+                            @Model.name
                         </h1><hr />
                     </td>
                 </tr>
@@ -26,13 +22,13 @@
 
                 <tr>
                     <td>
-                        Мы рады предложить Вам лучшую мебель итальянской фабрики MODUM. Обратитесь к нашим консультантам, чтобы получить информацию обо всех вариантах комплектации, цене и сроках поставки Спальня ROUND серебристая береза (Италия).
+                        @Model.shortDesc
                         <hr />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Стоимость: 1000000000 руб
+                        Стоимость: @Model.prise руб
                         <hr />
                     </td>
                 </tr>

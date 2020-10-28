@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\isip_\\Desktop\\Web_Shop_Core\\WEB_Shop_core\\WEB_Shop_core.csproj": {}
+    "C:\\Users\\isip_\\Documents\\GitHub\\Web_Shop_Core\\WEB_Shop_core\\WEB_Shop_core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\isip_\\Desktop\\Web_Shop_Core\\WEB_Shop_core\\WEB_Shop_core.csproj": {
+    "C:\\Users\\isip_\\Documents\\GitHub\\Web_Shop_Core\\WEB_Shop_core\\WEB_Shop_core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\isip_\\Desktop\\Web_Shop_Core\\WEB_Shop_core\\WEB_Shop_core.csproj",
+        "projectUniqueName": "C:\\Users\\isip_\\Documents\\GitHub\\Web_Shop_Core\\WEB_Shop_core\\WEB_Shop_core.csproj",
         "projectName": "WEB_Shop_core",
-        "projectPath": "C:\\Users\\isip_\\Desktop\\Web_Shop_Core\\WEB_Shop_core\\WEB_Shop_core.csproj",
+        "projectPath": "C:\\Users\\isip_\\Documents\\GitHub\\Web_Shop_Core\\WEB_Shop_core\\WEB_Shop_core.csproj",
         "packagesPath": "C:\\Users\\isip_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\isip_\\Desktop\\Web_Shop_Core\\WEB_Shop_core\\obj\\",
+        "outputPath": "C:\\Users\\isip_\\Documents\\GitHub\\Web_Shop_Core\\WEB_Shop_core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\isip_\\AppData\\Roaming\\NuGet\\NuGet.Config",

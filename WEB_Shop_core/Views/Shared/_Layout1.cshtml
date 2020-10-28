@@ -1,4 +1,6 @@
-﻿@{ 
+﻿@model IEnumerable<WEB_Shop_core.Data.Models.Mebel>
+@{
+
     Layout = "_Layout";
 }
 
@@ -8,11 +10,11 @@
         {
             if (mebel.Category.categoryname == ViewBag.Title)
             {
-                <article style="text-align:center; display:inline-flex; justify-content:space-around; margin:5px; background: #5e5d5b;">
+                <article style="text-align:center; display:inline-flex; justify-content:space-around; margin:5px; background: #5e5d5b; padding-bottom:10px">
                     <section>
-                        <a href="#">
+                        <a href="@Url.Action("Product_card","Home", new { id = mebel.id, name = mebel.name})" style="margin-bottom:10px; text-decoration: none;">
                             <img style="width:300px; padding:10px; margin: 0; " src="~/Assets/@mebel.img" /><br />
-                            <p style="color:white">
+                            <p style="color:white; ">
                                 @mebel.name
                             </p>
                         </a>
@@ -22,3 +24,4 @@
         }
     }
 </div>
+

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O03foHhfYa1xoEmi1VYUtavTARCB2gYgQqBLEZhjy9n9YiEknZTC7Ci2tkMFMEKhyOozSCNG4oG61l7n+vsdMA==",
+  "dgSpecHash": "kHvM9ufX+L6eC6WMHHdhnwi+knIe74IGutRs0ocnRs4Xf2HbQaUENrFomTWz8vkAxKtQXwjLzZ+Q9KqHdDHvpw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\isip_\\Desktop\\Web_Shop_Core\\WEB_Shop_core\\WEB_Shop_core.csproj",
+  "projectFilePath": "C:\\Users\\isip_\\Documents\\GitHub\\Web_Shop_Core\\WEB_Shop_core\\WEB_Shop_core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\isip_\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512",
     "C:\\Users\\isip_\\.nuget\\packages\\json\\1.0.1\\json.1.0.1.nupkg.sha512",

@@ -64,10 +64,12 @@ namespace WEB_Shop_core.Controllers
             ViewBag.Title = "Гостинные";
             return View(await mebels.AsNoTracking().ToListAsync());
         }
-
-        public ActionResult Product_card()
+        
+        public async Task<ActionResult> Product_card(int id,string name)
         {
-            return View();
+            ViewBag.Title = name;
+            var mebel = await db.Mebels.FindAsync(id);
+            return View(mebel);
         }
 
         public ActionResult Personal_Account()
