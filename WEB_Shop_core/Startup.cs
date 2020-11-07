@@ -12,13 +12,14 @@ using WEB_Shop_core.Data;
 
 
 using Microsoft.EntityFrameworkCore;
+using WEB_Shop_core.Data.Models;
 
 namespace WEB_Shop_core
 {
     public class Startup
     {
 
-        public Startup(IConfiguration configuration, Microsoft.AspNetCore.Hosting.IHostingEnvironment hosting)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
@@ -32,9 +33,8 @@ namespace WEB_Shop_core
             //// добавляем контекст AppDBContext в качестве сервиса в приложение
             //services.AddDbContext<AppDBContent>(options => options.UseSqlServer(connection));
             string connection = "Server=DESKTOP-1CRVPTK\\ISIP_D_A_PAHOMOV;Database=Test;Trusted_Connection=True;";
-
             services.AddDbContext<AppDBContent>(op => op.UseSqlServer(connection));
-
+            services.AddTransient<ArticlesRepository>();
             services.AddMvc();
             services.AddControllersWithViews();
         }

@@ -11,6 +11,8 @@ namespace WEB_Shop_core.Data
     {
         public DbSet<Mebel> Mebels { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<RegisteViewModel> RegisteViewModel { get; set; }
+
         public AppDBContent(DbContextOptions<AppDBContent> options) : base(options)
         {
             Database.EnsureCreated();
