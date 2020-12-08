@@ -370,3 +370,5 @@ C:\Users\isip_\Source\Repos\PDA2304\Web_Shop_Core\WEB_Shop_core\bin\Debug\netcor
 C:\Users\isip_\Source\Repos\PDA2304\Web_Shop_Core\WEB_Shop_core\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\isip_\Source\Repos\PDA2304\Web_Shop_Core\WEB_Shop_core\obj\Debug\netcoreapp3.1\WEB_Shop_core.csproj.CoreCompileInputs.cache
 C:\Users\isip_\Source\Repos\PDA2304\Web_Shop_Core\WEB_Shop_core\obj\Debug\netcoreapp3.1\WEB_Shop_core.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\isip_\Source\Repos\PDA2304\Web_Shop_Core\WEB_Shop_core\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\isip_\Source\Repos\PDA2304\Web_Shop_Core\WEB_Shop_core\obj\Debug\netcoreapp3.1\Razor\Views\Home\Test.cshtml.g.cs

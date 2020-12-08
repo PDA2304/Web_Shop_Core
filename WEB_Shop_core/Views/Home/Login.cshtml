@@ -1,19 +1,14 @@
-﻿@model WEB_Shop_core.Data.Models.RegisteViewModel
+﻿@model WEB_Shop_core.Data.Models.LoginModel
 @{
     ViewBag.Title = "Пользователь";
 }
-
 <div style="width:auto">
     <table style="margin: 0 auto; padding-bottom:10px; padding-top:10px">
         <tr>
-            
+
             <td>
-                <form asp-controller="home" asp-action="User" method="post">
-                    <h3 style="text-align:center; border-bottom:none; margin:0px; padding:0px">Регистрация</h3>
-                    <div>
-                        <input asp-for="Email" placeholder="Почта" />
-                        <span asp-validation-for="Email"></span>
-                    </div>
+                <form asp-controller="home" asp-action="Login" asp-anti-forgery="true">
+                    <h3 style="text-align:center; border-bottom:none; margin:0px; padding:0px">Авторизация</h3>
                     <div>
                         <input asp-for="Login" placeholder="Логин" />
                         <span asp-validation-for="Login"></span>
@@ -22,11 +17,7 @@
                         <input asp-for="Password" placeholder="Пароль" />
                         <span asp-validation-for="Password"></span>
                     </div>
-                    <div>
-                        <input asp-for="PasswordConfirm" placeholder="Потверждение пароля" />
-                        <span asp-validation-for="PasswordConfirm"></span>
-                    </div>
-                    <button type="submit" style="width:100%">Регистрация</button>
+                    <button type="submit" style="width:100%">Авторизация</button>
                 </form>
             </td>
         </tr>
@@ -35,4 +26,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
 </div>
-

@@ -6,9 +6,9 @@
 
     <title>@ViewBag.Title</title>
     <link type="text/css" href="~/css/Css.css" rel="stylesheet" />
-    
+
 </head>
-<body style="margin-top: 0;background: url('/Assets/bg1_old.png') fixed;" >
+<body style="margin-top: 0;background: url('/Assets/bg1_old.png') fixed;">
     <div style="width: 74%; margin-top: 0px; margin-bottom:0; background: grey; position:fixed; left:13%; top: 0;">
         <div style="width: 100%;border-bottom: 3px solid rgb(128, 127, 123);background: #5e5d5b;">
             <table style="width:90%; margin:auto; color: white;">
@@ -36,7 +36,36 @@
                     </td>
 
                     <td>
-                        <a href="@Url.Action("User")">  <img src="~/Assets/male.png" style="width:30px;" /></a>
+                        <div style="display: flex;margin-top: 0px;position: relative;">
+                            <img src="~/Assets/male.png" style="width:30px; margin-top: 8px; height: 35px;" />
+                            @{bool test = true;
+
+                                if (!User.Identity.IsAuthenticated)
+                                {
+
+                                    <table style=" position: relative; display: flex; box-sizing: border-box;">
+                                        <tr>
+                                            <td>
+
+                                                <a style=" color:#FFF; text-decoration: none;" href="@Url.Action("User")">Регистрация</a>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+
+                                                <a style=" color:#FFF; text-decoration: none;" href="@Url.Action("Login")">Авторизация</a>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                }
+                                else
+                                {
+                                    @User.Identity.Name
+                                }
+                          }
+                        </div>
                     </td>
                 </tr>
             </table>

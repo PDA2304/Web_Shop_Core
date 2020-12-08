@@ -1,15 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using WEB_Shop_core.Data;
 using WEB_Shop_core.Data.Models;
+
 namespace WEB_Shop_core.Controllers
 {
     public class HomeController : Controller
@@ -25,7 +27,7 @@ namespace WEB_Shop_core.Controllers
             this.articlesRepository = articlesRepository;
         }
 
-
+        [Authorize]
         public IActionResult Index()
         {
             return View();
@@ -40,12 +42,50 @@ namespace WEB_Shop_core.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                RegisteViewModel user = await db.RegisteViewModel.FirstOrDefaultAsync(u => u.Login == model.Login && u.Password == model.Password);
+                if (user != null)
+                {
+                    await Authenticate(model.Login); // аутентификация
+
+                    return RedirectToAction("Index", "Home");
+                }
+                ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+            }
+            return View(model);
+        }
+
+        private async Task Authenticate(string userName)
+        {
+            // создаем один claim
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
+            };
+            // создаем объект ClaimsIdentity
+            ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+            // установка аутентификационных куки
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
+        }
+
+
         public ActionResult User()
         {
             return View();
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> User(RegisteViewModel viewModel)
         {
             if (db.RegisteViewModel.Count() != 0)
@@ -64,9 +104,8 @@ namespace WEB_Shop_core.Controllers
             {
                 Debug.Write("Вы зарегистрировались");
                 articlesRepository.SaveArticle(viewModel);
-                //db.RegisteViewModel.Add(viewModel);
-                //await db.SaveChangesAsync();
-                return View("User");
+
+                return View();
             }
             else
             {

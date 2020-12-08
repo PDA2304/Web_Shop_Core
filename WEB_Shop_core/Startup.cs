@@ -13,6 +13,7 @@ using WEB_Shop_core.Data;
 
 using Microsoft.EntityFrameworkCore;
 using WEB_Shop_core.Data.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace WEB_Shop_core
 {
@@ -29,6 +30,10 @@ namespace WEB_Shop_core
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => //CookieAuthenticationOptions
+            {
+                options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Home/Login");
+            });
             //string connection = Configuration.GetConnectionString("DefaultConnection");
             //// добавляем контекст AppDBContext в качестве сервиса в приложение
             //services.AddDbContext<AppDBContent>(options => options.UseSqlServer(connection));
@@ -60,10 +65,8 @@ namespace WEB_Shop_core
             app.UseStaticFiles();
 
 
-
+            app.UseAuthentication();
             app.UseAuthorization();
-
-
 
             app.UseEndpoints(endpoints =>
             {

@@ -30,7 +30,7 @@ namespace WEB_Shop_core.Data.Models
         public bool GetByLogin(string Login)
         {
             var log = context.RegisteViewModel.Where(p => EF.Functions.Like(p.Login, Login));
-            if(log == null)
+            if(log.Count() == 0)
             {
                 return true;
             }
@@ -40,7 +40,7 @@ namespace WEB_Shop_core.Data.Models
         public bool GetByEmail(string Email)
         {
             var email = context.RegisteViewModel.Where(p => EF.Functions.Like(p.Email, Email));
-            if (email == null)
+            if (email.Count() == 0)
             {
                 return true;
             }
