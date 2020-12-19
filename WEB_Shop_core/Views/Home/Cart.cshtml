@@ -1,54 +1,54 @@
-﻿@{
+﻿@model WEB_Shop_core.Data.Models.Cart
+@{
     ViewBag.Title = "Корзина";
 }
 <div>
     <h1 style="text-align: center; color: white; padding: 10px 0px 0px 0px">Корзина</h1><hr />
     <div>
+        @{ if (Model.CartLines.Count == 0)
+            {
+                <img src="~/Assets/Аннотация 2020-09-14 095617.png" style="margin:auto; display:block; margin:0 auto; padding-top:20px; margin-bottom:20px" />
+                <h2 style="text-align:center; color:#bababa; border-bottom:none; font-size:25px;">
+                </h2>
+                <h3 style="text-align:center; color:white; padding: 15px 0px 30px 0px; font-size:15px;">
+                    <a href="@Url.Action("Index")" style="color:white;text-decoration: none; ">Нажмите здесь,</a>чтобы продолжить покупки
+                </h3>
+            }
+            else
+            {
+                @for (int i = 0; i < Model.CartLines.Count; i++)
+                {
+                    <li>
+                        @Model.CartLines[i].name - @Model.CartLines[i].prise <a href="/Home/RemoveFromCart?Number=@i">
+                            Убрать из
+                            корзины
+                        </a>
+                    </li>
 
-        <img src="~/Assets/Аннотация 2020-09-14 095617.png" style="margin:auto; display:block; margin:0 auto; padding-top:20px; margin-bottom:20px" />
-        <h2 style="text-align:center; color:#bababa; border-bottom:none; font-size:25px;">
-            В корзине нет ни одного товара
-        </h2>
+                }
+                @Model.FinalPrice
+                <h3 style="border-bottom: none; padding:10px; text-align:center ">Оформление заказа</h3>
+                <form asp-controller="home" asp-action="SuccZakk" method="post">
+                    <div style="padding:10px;color:white;">
+                        <div>
+                            <span class="redstar">*</span> Имя:<br><input asp-for="Name" type="text" style="width: 50%;">
+                        </div>
+                        <div class="field adap_ord2">
+                            <table border="0" cellspacing="0" cellpadding="0" width="50%" style="color: #fff;">
+                                <tbody>
 
-        <h3 style="text-align:center; color:white; padding: 15px 0px 30px 0px; font-size:15px;">
-            <a href="@Url.Action("Index")" style="color:white;text-decoration: none; ">Нажмите здесь,</a>чтобы продолжить покупки
-        </h3>
-        <h3 style="border-bottom: none; padding:10px; text-align:center ">Оформление заказа</h3>
-        <div style="padding:10px;color:white;">
-            <div>
-                <span class="redstar">*</span> Имя:<br><input id="order_name" name="order_name" type="text" style="width: 50%;">
-            </div>
-            <div class="field adap_ord2">
-                <table border="0" cellspacing="0" cellpadding="0" width="50%" style="color: #fff;">
-                    <tbody>
-
-                        <tr>
-                            <td><div class="adap"><span class="redstar">*</span> Электронная почта</div><input id="order_email" name="order_email" type="text" style="width: 94%;"></td>
-                            <td><div class="adap"><span class="redstar">*</span> Телефон:</div><input id="order_phone" name="order_phone" type="text" style="width: 100%;"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div> Адрес доставки:<br><input id="order_address" name="order_address" type="text" style="width: 50%;"> </div>
-            <div style="padding-bottom: 4px;">
-                Вид доставки:<br>
-                <div style="line-height: 40px;" class="adap_ord3">
-                    <label><input type="radio" name="delivery" value="самовывоз" checked=""> самовывоз</label>
-                    <label><input type="radio" name="delivery" value="доставка по Подмосковью"> доставка по Подмосковью</label>
-                    <label><input type="radio" name="delivery" value="доставка по Москве"> доставка по Москве</label>
-                    <br>
-                    <label><input type="radio" name="delivery" value="доставка до тр.компании"> доставка до транспортной компании</label>
-                </div>
-            </div>
-            <div><ul><li>Срок доставки – 3 рабочих дня (при условии наличия нужного товара на складе)</li><li>Стоимость ДОСТАВКИ по Москве в пределах МКАД  – 3000р.</li><li>от МКАД – 45 руб./км.</li><li>Мы можем осуществить доставку в выбранную Вами транспортную компанию. Стоимость доставки в транспортную компанию – 5000р.</li></ul><hr/></div>
-            <div>
-                ВНИМАНИЕ! Для ускорения выставления счета при безналичной оплате сразу указывайте реквизиты/ФИО получателя и адрес доставки товара.
-                <br>
-                Комментарий к заказу: <br>
-                <textarea id="order_comment" name="order_comment" rows="6" style="width: 50%;"></textarea>
-            </div>
-            <div><span class="redstar">*</span> — обязательны к заполнению</div>
-            <button onclick="OrderSend()" type="button">Отправить заказ</button>
-        </div>
+                                    <tr>
+                                        <td><div class="adap"><span class="redstar">*</span> Электронная почта</div><input asp-for="Mail" type="text" style="width: 94%;"></td>
+                                        <td><div class="adap"><span class="redstar">*</span> Телефон:</div><input asp-for="Telefon" type="text" style="width: 100%;"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div> Адрес доставки:<br><input asp-for="Address" type="text" style="width: 50%;"> </div>
+                        <button type="submit">Отправить заказ</button>
+                    </div>
+                </form>
+            }
+        }
     </div>
 </div>
